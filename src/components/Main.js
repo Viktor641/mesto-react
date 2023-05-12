@@ -20,7 +20,7 @@ function Main(props) {
       .catch((err) => {
         console.log(`Произошла ошибка ${err}`)
       })
-  })
+  }, [])
 
   return (
     <main className="content">
@@ -55,9 +55,9 @@ function Main(props) {
         </div>
       </section>
       <section className="cards">
-        {cards.map((card, id) => (
+        {cards.map((card, _id) => (
           <Card 
-            key={id}
+            key={card._id}
             card={card}
             link={card.link}
             name={card.name}

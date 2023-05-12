@@ -4,7 +4,7 @@ export class Api {
     this._headers = headers;
   }
 
-  _errorChecking(res) {
+  _checkResponse(res) {
     if (res.ok) {
       return res.json();
     } else {
@@ -16,7 +16,7 @@ export class Api {
     return fetch(`${this._baseUrl}users/me`, {
       headers: this._headers
     })
-      .then(res => { return this._errorChecking(res); })
+      .then(res => { return this._checkResponse(res); })
   }
 
   sendAvatarData(avatarLink) {
@@ -25,14 +25,14 @@ export class Api {
       method: 'PATCH',
       body: JSON.stringify({ avatar: avatarLink.avatar })
     })
-      .then(res => { return this._errorChecking(res); })
+      .then(res => { return this._checkResponse(res); })
   }
 
   getInitialCards() {
     return fetch(`${this._baseUrl}cards`, {
       headers: this._headers
     })
-      .then(res => { return this._errorChecking(res); })
+      .then(res => { return this._checkResponse(res); })
   }
 
   addNewCard({ name, link }) {
@@ -41,7 +41,7 @@ export class Api {
       method: 'POST',
       body: JSON.stringify({ name, link })
     })
-      .then(res => { return this._errorChecking(res); })
+      .then(res => { return this._checkResponse(res); })
   }
 
   sendUserData(profileData) {
@@ -50,7 +50,7 @@ export class Api {
       method: 'PATCH',
       body: JSON.stringify({ name: profileData.name, about: profileData.job })
     })
-      .then(res => { return this._errorChecking(res); })
+      .then(res => { return this._checkResponse(res); })
   }
 
   deleteCardId(cardId) {
@@ -58,7 +58,7 @@ export class Api {
       headers: this._headers,
       method: 'DELETE',
     })
-      .then(res => { return this._errorChecking(res); })
+      .then(res => { return this._checkResponse(res); })
   }
 
   putLike(cardId) {
@@ -66,7 +66,7 @@ export class Api {
       headers: this._headers,
       method: 'PUT',
     })
-      .then(res => { return this._errorChecking(res); })
+      .then(res => { return this._checkResponse(res); })
   }
 
   deleteLike(cardId) {
@@ -74,7 +74,7 @@ export class Api {
       headers: this._headers,
       method: 'DELETE',
     })
-      .then(res => { return this._errorChecking(res); })
+      .then(res => { return this._checkResponse(res); })
   }
 }
 
