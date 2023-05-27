@@ -15,7 +15,7 @@ function EditAvatarPopup(props) {
 
   useEffect(() => {
     urlRef.current.value = '';
-  });
+  }, [props.isOpen]);
 
   return (
     <PopupWithForm

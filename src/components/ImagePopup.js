@@ -3,8 +3,8 @@ function ImagePopup(props) {
     <div className={`popup popup_theme_picture ${props.card ? 'popup_opened' : ''}`}>
       <div className="popup__container popup__container_type_overlay">
         <img
-          src={props.card ? props.card.link : ''}
-          alt={props.card ? props.card.name : ''}
+          src={props.card?.link}
+          alt={props.card?.name}
           className="popup__image"
         />
         <button
@@ -12,7 +12,7 @@ function ImagePopup(props) {
           className="popup__close button popup__close_type_picture"
           onClick={props.onClose}
         />
-        <h2 className="popup__paragraph">{props.card ? props.card.name : ''}</h2>
+        <h2 className="popup__paragraph">{props.card?.name}</h2>
       </div>
     </div>
   )

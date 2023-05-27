@@ -19,7 +19,6 @@ function App() {
   const [currentUser, setCurrentUser] = useState({});
   const [cards, setCards] = useState([]);
 
-
   useEffect(() => {
     Promise.all([api.getUserData(), api.getInitialCards()])
       .then(([userData, cards]) => {
@@ -119,8 +118,6 @@ function App() {
     setIsAddPlacePopupOpen(false);
     setSelectedCard(null);
   }
-
-
 
   return (
     <CurrentUserContext.Provider value={currentUser}>

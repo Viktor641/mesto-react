@@ -13,7 +13,6 @@ function Card(props) {
     `card__like ${isLiked && 'card__like_active'}`
   );
 
-
   function handleClick() {
     props.onCardClick(props.card)
   }
@@ -25,7 +24,6 @@ function Card(props) {
   function handleCardDelete() {
     props.onCardDelete(props.card)
   }
-
 
   return (
     <div className="card">

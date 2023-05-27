@@ -6,7 +6,6 @@ function AddPlacePopup(props) {
   const [title, setTitle] = useState('');
   const [link, setLink] = useState('');
 
-
   function handleTitleChange(evt) {
     setTitle(evt.target.value);
   }
@@ -19,7 +18,6 @@ function AddPlacePopup(props) {
     setTitle('');
     setLink('');
   }, [props.isOpen])
-
 
   function handleSubmit(e) {
     e.preventDefault();
